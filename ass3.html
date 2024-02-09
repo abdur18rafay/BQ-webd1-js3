@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username Validation</title>
+</head>
+
+<body>
+    <h1>Username Registration</h1>
+    <form id="registrationForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const form = document.getElementById("registrationForm");
+        const usernameInput = document.getElementById("username");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); 
+            const username = usernameInput.value.trim(); 
+
+            if (username.length < 5) {
+                alert("Username must be at least 5 characters long!");
+            } else if (!/^[a-zA-Z0-9]+$/.test(username)) {
+                alert("Username can only contain letters and numbers!");
+            } else {
+                alert("Username valid! ");
+            }
+        });
+    </script>
+</body>
+
+</html>

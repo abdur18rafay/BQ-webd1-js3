@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Hidden Div</title>
+    <style>
+        #hiddenDiv {
+            display: none;
+            /* Initially hidden */
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin: 20px auto;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="toggleButton">Show Hidden Content</button>
+    <div id="hiddenDiv">This is hidden content!</div>
+
+    <script>
+        const toggleButton = document.getElementById("toggleButton");
+        const hiddenDiv = document.getElementById("hiddenDiv");
+
+        let isHidden = true; 
+
+        toggleButton.addEventListener("click", function () {
+            if (isHidden) {
+                hiddenDiv.style.display = "block";
+                toggleButton.textContent = "Hide Hidden Content";
+                isHidden = false;
+            } else {
+                hiddenDiv.style.display = "none";
+                toggleButton.textContent = "Show Hidden Content";
+                isHidden = true;
+            }
+        });
+    </script>
+</body>
+
+</html>
